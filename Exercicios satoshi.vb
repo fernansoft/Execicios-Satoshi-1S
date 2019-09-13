@@ -33,7 +33,7 @@ Dim A, B, C, Delta, X1, X2 As Double
 A = InputBox("Insira o valor de A")
 B = InputBox("Insira o valor de B")
 C = InputBox("Insira o valor de C")
-Delta = B ^ 2 - 4 * A * C0
+Delta = B ^ 2 - 4 * A * C
 X1 = (-B + Sqr(Delta)) / 2 * A
 X2 = (-B - Sqr(Delta)) / 2 * A 80
 MsgBox ("As raízes são: ") & ("X1: ") & X1 & (" e X2: ") & X2
@@ -114,6 +114,26 @@ Hipotenusa = ((Cateto1*Cateto1)+(Cateto2*Cateto2))
 MsgBox("O valor da hipotenusa é: ") & "Raiz quadrada de "& Hipotenusa
 End Sub
 
+Private Sub Exec16_Click()
+Dim HrsTrab, Valphr, Desconto, Dependentes, SalBrut, SalLiq, ValReceber as Double
+HrsTrab = InputBox("Insira as horas trabalhadas:")
+Valphr = InputBox("Insira o valor por hora:")
+SalBrut = HrsTrab * Valphr
+Desconto = inputbox("Insira o percentual de desconto:")
+Dependentes = inputbox("Insira a quantidade de dependentes:")*100
+SalLiq = SalBrut - Desconto + Dependentes
+MsgBox("O salário a receber é: ") & SalLiq
+End Sub
+
+Private Sub Exec17_Click()
+Dim TmpPercurso, VelMed, Deslocamento, Litros as Double
+TmpPercurso = inputbox("Insira o tempo total de percurso:")
+VelMed = inputbox("Insira a velocidade média da viagem:")
+Deslocamento = TmpPercurso * VelMed
+Litros = Deslocamento/12
+MsgBox("A quantidade de litros de gasolina consumidos foi de: ") & Litros
+End Sub
+
 Private Sub Exec18_Click()
 Dim Valor1, Valor2 as Integer
 Valor1 = inputbox("Insira o primeiro valor: ")
@@ -132,6 +152,34 @@ If Valor1 < Valor2
 	MsgBox("O maior valor é: ") & Valor2
 Else MsgBox("O maior valor é: ") & Valor1
 EndIf
+End Sub
+
+Private Sub Exec20_Click()
+Dim A, B, C, Delta, X1, X2 As Double
+A = InputBox("Insira o valor de A")
+B = InputBox("Insira o valor de B")
+C = InputBox("Insira o valor de C")
+Delta = B ^ 2 - 4 * A * C
+X1 = (-B + Sqr(Delta)) / 2 * A
+X2 = (-B - Sqr(Delta)) / 2 * A 80
+if Delta<0 Then
+MsgBox("Essa equação não tem raízes reais!")
+Else MsgBox ("As raízes são: ") & ("X1: ") & X1 & (" e X2: ") & X2
+EndIf
+End Sub
+
+Private Sub Exec21_Click()
+Dim B1, B2, B3, B4 as Double
+Dim 
+End Sub
+
+Private Sub Exec22_Click()
+End Sub
+
+Private Sub Exec23_Click()
+End Sub
+
+Private Sub Exec24_Click()
 End Sub
 
 Private Sub Exec25_Click()
