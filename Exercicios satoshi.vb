@@ -161,25 +161,91 @@ B = InputBox("Insira o valor de B")
 C = InputBox("Insira o valor de C")
 Delta = B ^ 2 - 4 * A * C
 X1 = (-B + Sqr(Delta)) / 2 * A
-X2 = (-B - Sqr(Delta)) / 2 * A 80
-if Delta<0 Then
-MsgBox("Essa equação não tem raízes reais!")
-Else MsgBox ("As raízes são: ") & ("X1: ") & X1 & (" e X2: ") & X2
-EndIf
+X2 = (-B - Sqr(Delta)) / 2 * A
+	If Delta < 0 Then
+		MsgBox ("Essa equação não possuí raízes reais!")
+		Else
+			If Delta = 0 Then
+			MsgBox ("Essa equação possuí raízes reais iguais, sendo elas: ") & vbcrlf & ("X1: ") & X1 & vbcrlf & ("X2: ") & X2
+				Else
+				MsgBox ("Essa Equação possui duas raízes reais diferentes, sendo elas: ") & vbcrlf & ("X1: ") & X1 & vbcrlf & ("X2: ") & X2
+			End If
+	End If
 End Sub
 
 Private Sub Exec21_Click()
-Dim B1, B2, B3, B4 as Double
-Dim 
+Dim B1 as Double
+Dim B2 as Double
+Dim B3 as Double
+Dim B4 as Double
+Dim Media As Double
+B1 = InputBox("Insira sua nota referente ao primeiro bimestre:")
+B2 = InputBox("Insira sua nota referente ao segundo bimestre:")
+B3 = InputBox("Insira sua nota referente ao terceiro bimestre:")
+B4 = InputBox("Insira sua nota referente ao quarto bimestre:")
+Media = ((B1 + B2 + B3 + B4) / 4)
+    If Media >= 6 Then
+        MsgBox ("APROVADO")
+        Else
+            If Media >= 3 Then
+            MsgBox ("EXAME")
+                Else
+                MsgBox ("RETIDO")
+            End If
+    End If
 End Sub
 
 Private Sub Exec22_Click()
+Dim Val1
+Dim Val2
+Val1 = InputBox("Insira o primeiro valor:")
+Val2 = InputBox("Insira o segundo valor:")
+While Val2 = Val1
+MsgBox ("Não é possível inserir valores iguais!")
+InputBox ("Insira o segundo valor:")
+Wend
+If Val2 > Val1 Then
+MsgBox ("Os apresentando em ordem crescente, fica:") & vbCrLf & Val1 & vbCrLf & Val2
+Else
+MsgBox ("Os apresentando em ordem crescente, fica:") & vbCrLf & Val2 & vbCrLf & Val1
+End If
 End Sub
 
+
 Private Sub Exec23_Click()
+Dim Val1 as Double
+Dim Val2 as Double
+Dim Val3 as Double
+Dim Val4 as Double
+Val1 = InputBox("Insira o primeiro valor:")
+Val2 = InputBox(("Insira o segundo valor:") & vbCrLf & ("Maior que o primeiro"))
+	While Val2 <= Val1
+		MsgBox("Insira um valor maior que o primeiro")
+		Val2 = InputBox(("Insira o segundo valor:") & vbCrLf & ("Maior que o primeiro"))
+	Wend
+Val3 = InputBox(("Insira o terceiro valor:") & vbCrLf & ("Maior que o segundo"))
+	While Val3 <= Val2
+		MsgBox("Insira um valor maior que o segundo")
+		Val3 = (InputBox("Insira o terceiro valor:") & vbCrLf & ("Maior que o segundo"))
+	Wend
+Val4 = InputBox("Insira o quarto valor:")
+If Val4 > Val3 Then
+	MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val3 & vbCrLf & Val4
+	Else
+	If Val4 > Val2 Then
+		MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val4 & vbCrLf & Val3	
+		Else
+		If Val4 > Val1 Then
+			MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val4 & vbCrLf & Val2 & vbCrLf & Val3
+			Else
+				MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val4 & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val3
+		EndIf
+	EndIf
+EndIf	
 End Sub
 
 Private Sub Exec24_Click()
+
 End Sub
 
 Private Sub Exec25_Click()
