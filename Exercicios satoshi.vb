@@ -138,7 +138,7 @@ Private Sub Exec18_Click()
 Dim Valor1, Valor2 as Integer
 Valor1 = inputbox("Insira o primeiro valor: ")
 Valor2 = inputbox("Insira o segundo valor: ")
-If Valor1 < Valor2
+If Valor1 < Valor2 Then
 	MsgBox("O resultado é: ") & Valor2 - Valor1
 Else MsgBox("O resultado é: ") & Valor1 - Valor2
 EndIf
@@ -148,7 +148,7 @@ Private Sub Exec19_Click()
 Dim Valor1, Valor2 as Double
 Valor1 = ("Insira o primeiro valor: ")
 Valor2 = ("Insira o segundo valor: ")
-If Valor1 < Valor2
+If Valor1 < Valor2 Then
 	MsgBox("O maior valor é: ") & Valor2
 Else MsgBox("O maior valor é: ") & Valor1
 EndIf
@@ -239,28 +239,69 @@ If Val4 > Val3 Then
 			MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val4 & vbCrLf & Val2 & vbCrLf & Val3
 			Else
 				MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val4 & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val3
-		EndIf
-	EndIf
-EndIf	
+		End If
+	End If
+End If	
 End Sub
 
 Private Sub Exec24_Click()
+Dim Valor as Double
+Valor = inputbox("Insira o valor:")
+	If (((Valor / 2) - (Valor \ 2)) = 0) and (((Valor / 3) - (Valor \ 3)) = 0) Then
+			MsgBox("O número é divisível por dois e por três!")
+		Else	
+		If (((Valor / 2) - (Valor \ 2)) = 0) Then
+			MsgBox("O número é divisível por dois!")
+			Else
+			If (((Valor / 3) - (Valor \ 3)) = 0) Then
+				MsgBox("O número é divisível por três!")
+				Else
+				MsgBox("O valor não é divisível nem por três e nem por dois!")
+			End If
+		End If
+	End If
+End Sub
+
+Private Sub Exec25()
+Dim hr_ini, min_ini, hr_fin, min_fin, HrDoJogo, Duração As Double
+    hr_ini = InputBox("Horário de início! Insira a hora no formato 24h: ")
+        While hr_ini > 23
+            MsgBox ("Por favor, insira apenas valores positivos menores que 24!")
+            hr_ini = InputBox("Horário de início! Insira a hora no formato 24h: ")
+        Wend
+    min_ini = InputBox("Horário de início! Insira os minutos: ")
+    hr_ini = ((hr_ini * 60) + min_ini)
+    hr_fin = (InputBox("Horário do fim! Insira a hora no formato 24h: "))
+        While hr_fin > 23
+            MsgBox ("Por favor, insira apenas valores positivos menores que 24!")
+            hr_fin = InputBox("Horário de fim! Insira a hora no formato 24h: ")
+        Wend
+    min_fin = InputBox("Horário de fim! Insira os minutos: ")
+    hr_fin = ((hr_fin * 60) + min_fin)
+        If hr_fin < hr_ini Then
+            HrDoJogo = hr_fin + 1440 - hr_ini
+            Else: HrDoJogo = hr_fin - hr_ini
+        End If
+    MsgBox ("O jogo durou: ") & (HrDoJogo \ 60) & "h e " & (((HrDoJogo / 60) - (HrDoJogo \ 60)) * 60) & "m"
+End Sub
+
+Private Sub Exec26_Click()
+Dim Val1, Val2 as Double
 
 End Sub
 
-Private Sub Exec25_Click()
-Dim hr_ini, min_ini, hr_fin, min_fin, HrDoJogo, Duração As Double
-Dim dia_ini, dia_fin As Double
-	hr_ini = (InputBox("Horário de início! Insira a hora no formato 24h: ") * 60)
-	min_ini = InputBox("Horário de início! Insira os minutos: ")
-	hr_ini = hr_ini + min_ini
-	hr_fin = (InputBox("Horário do fim! Insira a hora no formato 24h: ") * 60)
-	min_fin = InputBox("Horário de fim! Insira os minutos: ")
-	hr_fin = hr_fin + min_fin
-		If hr_fin < hr_ini Then
-			HrDoJogo = hr_fin + 24 - hr_ini
-			Else: HrDoJogo = hr_ini - hr_fin
-		End If
-		MsgBox ("O jogo durou: ") & (HrDoJogo \ 60) & "h e " & (((HrDoJogo / 60) - (HrDoJogo \ 60)) * 60) & "m"
-MsgBox ("O jogo durou: ") & (HrDoJogo\60) & ":" & (((HrDoJogo/60) - (HrDoJogo\60)) * 60)
+Private Sub Exec27_Click()
+
+End Sub
+
+Private Sub Exec28_Click()
+
+End Sub
+
+Private Sub Exec29_Click()
+
+End Sub
+
+Private Sub Exec30_Click()
+
 End Sub
