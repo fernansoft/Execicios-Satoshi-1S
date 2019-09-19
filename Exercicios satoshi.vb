@@ -286,17 +286,21 @@ Dim hr_ini, min_ini, hr_fin, min_fin, HrDoJogo, Duração As Double
 End Sub
 
 Private Sub Exec26_Click()
-Dim Num1, Num2, Maior, Menor as Double
-Num1 = inputbox("Insira o primeiro número:")
-Num2 = inputbox("Insira o segundo número:")
-	If Num1<Num2 Then
-		Maior = Num2 and Menor = Num1
-		Else Maior = Num1 and Menor = Num2
-	End If
-	If Maior\Menor == Maior/Menor Then
-		MsgBox("O número ") & Maior & "é múltiplo de " & Menor
-		Else MsgBox("O número ") & Maior & "não é múltiplo de " & Menor
-	End If
+Dim Num1, Num2, Maior, Menor As Double
+Num1 = InputBox("Insira o primeiro número:")
+Num2 = InputBox("Insira o segundo número:")
+    If Num1 > Num2 Then
+        Maior = Num1
+        Menor = Num2
+        Else
+        Maior = Num2
+        Menor = Num1
+    End If
+    If (0 = Maior Mod Menor) Then
+        MsgBox (("O número ") & Maior & " é multiplo de " & Menor)
+        Else
+        MsgBox (("O número ") & Maior & " não é multiplo de " & Menor)
+    End If
 End Sub
 
 Private Sub Exec27_Click()
