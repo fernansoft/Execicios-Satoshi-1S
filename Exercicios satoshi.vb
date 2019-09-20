@@ -289,7 +289,10 @@ Private Sub Exec26_Click()
 Dim Num1, Num2, Maior, Menor As Double
 Num1 = InputBox("Insira o primeiro número:")
 Num2 = InputBox("Insira o segundo número:")
-    If Num1 > Num2 Then
+    If Num1 = Num2 Then
+		MsgBox("Os números são iguais!")
+	End If
+	If Num1 > Num2 Then
         Maior = Num1
         Menor = Num2
         Else
@@ -304,7 +307,8 @@ Num2 = InputBox("Insira o segundo número:")
 End Sub
 
 Private Sub Exec27_Click()
-
+Dim Voltas, Extencao, Tempo as Double
+Voltas = inputbox("Insira ")
 End Sub
 
 Private Sub Exec28_Click()
