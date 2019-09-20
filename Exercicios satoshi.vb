@@ -307,8 +307,12 @@ Num2 = InputBox("Insira o segundo número:")
 End Sub
 
 Private Sub Exec27_Click()
-Dim Voltas, Extencao, Tempo as Double
-Voltas = inputbox("Insira ")
+Dim Voltas, Extensao, Tempo, VelMed as Double
+Voltas = inputbox("Insira a quantidade de voltas:")
+Extensao = inputbox("Insira a extensão do circuito em metros:")
+Tempo = inputbox("Insira o tempo de duração em minutos:")
+VelMed = ((Voltas * Extensao) / (Tempo*60))
+MsgBox("A sua velocidade média foi de: ") & VelMed & "m/s"
 End Sub
 
 Private Sub Exec28_Click()
