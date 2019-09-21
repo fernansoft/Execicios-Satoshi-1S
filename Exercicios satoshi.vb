@@ -312,11 +312,29 @@ Voltas = inputbox("Insira a quantidade de voltas:")
 Extensao = inputbox("Insira a extensão do circuito em metros:")
 Tempo = inputbox("Insira o tempo de duração em minutos:")
 VelMed = ((Voltas * Extensao) / (Tempo*60))
+Velmed = Round(VelMed, 2)
 MsgBox("A sua velocidade média foi de: ") & VelMed & "m/s"
 End Sub
 
 Private Sub Exec28_Click()
-
+Dim PrecoAt as Double
+Dim	MedMensal as Integer
+Dim NovoPreco as Double
+MedMensal = inputbox("Insira a média de vendas mensais:")
+PrecoAt = inputbox("Insira o preço atual:")
+If MedMensal<500 and PrecoAt<30 Then
+	NovoPreco = PrecoAt * 1.1
+	Else
+	If MedMensal < 1000 and PrecoAt >=30 and PrecoAt < 80 Then
+		NovoPreco = PrecoAt * 1.15
+		Else
+		If MedMensal >= 1000 and PrecoAt >= 80 Then
+			NovoPreco = PrecoAt * 0.95
+			Else NovoPreco = PrecoAt
+		End If
+	End If
+End If
+MsgBox("O novo preço do produto será: ") & NovoPreco
 End Sub
 
 Private Sub Exec29_Click()
