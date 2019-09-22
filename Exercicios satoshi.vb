@@ -58,10 +58,10 @@ MgsBox("O volume é: ") & Volume
 End Sub
 
 Private Sub Exec8_Click()
-Dim Poupança, Rentabilidade, QntMeses as Double
-Poupança = Inputbox("Insira o valor a ser investido: ")
+Dim Poupanca, Rentabilidade, QntMeses as Double
+  Poupanca = Inputbox("Insira o valor a ser investido: ")
 QntMeses = Inputbox("Insira a quantidade de meses para ver a previsão: ")
-Rentabilidade = (Poupança * 1,013) ^ (QntMeses)
+Rentabilidade = (Poupanca * 1.013) ^ (QntMeses)
 MsgBox("O valor bruto a ser retirado é: ") & Rentabilidade
 End Sub
 
@@ -233,7 +233,7 @@ If Val4 > Val3 Then
 	MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val3 & vbCrLf & Val4
 	Else
 	If Val4 > Val2 Then
-		MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val4 & vbCrLf & Val3	
+		MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val4 & vbCrLf & Val3
 		Else
 		If Val4 > Val1 Then
 			MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val1 & vbCrLf & Val4 & vbCrLf & Val2 & vbCrLf & Val3
@@ -241,7 +241,7 @@ If Val4 > Val3 Then
 				MsgBox("Os valores em ordem crescente ficam:") & vbCrLf & Val4 & vbCrLf & Val1 & vbCrLf & Val2 & vbCrLf & Val3
 		End If
 	End If
-End If	
+End If
 End Sub
 
 Private Sub Exec24_Click()
@@ -249,7 +249,7 @@ Dim Valor as Double
 Valor = inputbox("Insira o valor:")
 	If (((Valor / 2) - (Valor \ 2)) = 0) and (((Valor / 3) - (Valor \ 3)) = 0) Then
 			MsgBox("O número é divisível por dois e por três!")
-		Else	
+		Else
 		If (((Valor / 2) - (Valor \ 2)) = 0) Then
 			MsgBox("O número é divisível por dois!")
 			Else
@@ -263,7 +263,7 @@ Valor = inputbox("Insira o valor:")
 End Sub
 
 Private Sub Exec25()
-Dim hr_ini, min_ini, hr_fin, min_fin, HrDoJogo, Duração As Double
+Dim hr_ini, min_ini, hr_fin, min_fin, HrDoJogo As Double
     hr_ini = InputBox("Horário de início! Insira a hora no formato 24h: ")
         While hr_ini > 23
             MsgBox ("Por favor, insira apenas valores positivos menores que 24!")
@@ -338,7 +338,23 @@ MsgBox("O novo preço do produto será: ") & NovoPreco
 End Sub
 
 Private Sub Exec29_Click()
-
+Dim Investimento, ValInvest, Rendimento as Double
+Investimento = Inputbox("Insira o tipo do investimento:") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa")
+While Investimento =/ 1 or Investimento =/ 2
+	Msgbox("Só é possível inserir 1 ou 2 (respectivamente Poupança e Renda Fixa")
+	Investimento = Inputbox(("Insira o tipo do investimento: ") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa"))
+Wend
+ValInvest = Inputbox("Insira qual o valor que pretende investir:")
+While ValInvest<0
+	MsgBox("Insira apenas valores positivos!")
+	ValInvest = Inputbox("Insira qual o valor que pretende investir:")
+Wend
+If Investimento = 1 Then
+Rendimento = ValInvest * 1.03
+	Else
+	Rendimento = ValInvest * 1.05
+End If
+MsgBox("O valor bruto na sua conta serà de: ") & Rendimento
 End Sub
 
 Private Sub Exec30_Click()
