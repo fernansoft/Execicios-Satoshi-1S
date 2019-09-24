@@ -373,5 +373,21 @@ Wend
 End Sub
 
 Private Sub Exec32_Click()
+Dim Num, Fatorial as Integer
+Num = inputbox("Insira o número: ")
+While Num > 0
+	Num = Num * (Num - 1)
+Wend
+MsgBox("O fatorial de ") & ("é ") & Num
+End Sub
 
+Private Sub Exec33_Click()
+Dim 
+End Sub
+
+Private Sub Exe34_Click(
+Dim Valor, Multiplicador as Integer
+Valor = Inputbox("Insira o número desejado: ")
+While Multiplicador < 11
+	Valor = 
 End Sub
