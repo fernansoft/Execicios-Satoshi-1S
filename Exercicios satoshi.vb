@@ -340,12 +340,12 @@ End Sub
 Private Sub Exec29_Click()
 Dim Investimento, ValInvest, Rendimento as Double
 Investimento = Inputbox("Insira o tipo do investimento:") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa")
-While Investimento =/ 1 or Investimento =/ 2
+While Investimento > 0 and Investimento < 3
 	Msgbox("Só é possível inserir 1 ou 2 (respectivamente Poupança e Renda Fixa")
 	Investimento = Inputbox(("Insira o tipo do investimento: ") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa"))
 Wend
 ValInvest = Inputbox("Insira qual o valor que pretende investir:")
-While ValInvest<0
+While ValInvest < 0
 	MsgBox("Insira apenas valores positivos!")
 	ValInvest = Inputbox("Insira qual o valor que pretende investir:")
 Wend
@@ -358,5 +358,20 @@ MsgBox("O valor bruto na sua conta serà de: ") & Rendimento
 End Sub
 
 Private Sub Exec30_Click()
+
+End Sub
+
+Private Sub Exec31_Click()
+Dim Nums, QuadradoNums, Incremento as Integer
+Nums = 10
+While Nums < 150
+	Incremento = Nums + 1
+	QuadradoNums = (Nums) ^ 2
+	Nums = Incremento
+	Msgbox("O quadrado de ") & Incremento & ("é: ") & QuadradoNums
+Wend
+End Sub
+
+Private Sub Exec32_Click()
 
 End Sub
