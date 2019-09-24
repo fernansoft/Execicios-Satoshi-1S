@@ -388,6 +388,20 @@ End Sub
 Private Sub Exe34_Click(
 Dim Valor, Multiplicador as Integer
 Valor = Inputbox("Insira o número desejado: ")
+Multiplicador = 0
 While Multiplicador < 11
-	Valor = 
+	Multiplicador = Multiplicador + 1
+	Valor = Valor * Multiplicador
+Wend
+End Sub
+
+Private Sub Exec35_Click()
+Dim Num1, Num2, Maior, Menor, Somatória as Integer
+Num1 = InputBox("Insira o primeiro número:")
+Num2 = InputBox("Insira o segundo número:")
+If Num1 < Num2 Then
+	Maior = Num2 and Menor = Num1
+	Else Maior = Num1 and Menor = Num2
+End If
+
 End Sub
