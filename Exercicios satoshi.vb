@@ -338,23 +338,25 @@ MsgBox("O novo preço do produto será: ") & NovoPreco
 End Sub
 
 Private Sub Exec29_Click()
-Dim Investimento, ValInvest, Rendimento as Double
-Investimento = Inputbox("Insira o tipo do investimento:") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa")
-While Investimento > 0 and Investimento < 3
-	Msgbox("Só é possível inserir 1 ou 2 (respectivamente Poupança e Renda Fixa")
-	Investimento = Inputbox(("Insira o tipo do investimento: ") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa"))
+Dim Investimento, ValInvest, Rendimento As Double
+Investimento = InputBox(("Insira o tipo do investimento:") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa"))
+While Investimento > 2
+    MsgBox ("Só é possível inserir 1 ou 2 (respectivamente Poupança e Renda Fixa)")
+    Investimento = InputBox(("Insira o tipo do investimento: ") & vbCrLf & ("1 = Poupança") & vbCrLf & ("2 = Renda Fixa"))
 Wend
-ValInvest = Inputbox("Insira qual o valor que pretende investir:")
+ValInvest = InputBox("Insira qual o valor que pretende investir:")
 While ValInvest < 0
-	MsgBox("Insira apenas valores positivos!")
-	ValInvest = Inputbox("Insira qual o valor que pretende investir:")
+    MsgBox ("Insira apenas valores positivos!")
+    ValInvest = InputBox("Insira qual o valor que pretende investir:")
 Wend
 If Investimento = 1 Then
 Rendimento = ValInvest * 1.03
-	Else
-	Rendimento = ValInvest * 1.05
+    Else
+    If Investimento = 2 Then
+    Rendimento = ValInvest * 1.05
 End If
-MsgBox("O valor bruto na sua conta serà de: ") & Rendimento
+End If
+MsgBox ("O valor bruto na sua conta serà de: ") & Rendimento
 End Sub
 
 Private Sub Exec30_Click()
@@ -362,37 +364,37 @@ Private Sub Exec30_Click()
 End Sub
 
 Private Sub Exec31_Click()
-Dim Nums, QuadradoNums, Incremento as Integer
+Dim Nums, QuadradoNums, Incremento As Integer
 Nums = 10
-While Nums < 150
-	Incremento = Nums + 1
-	QuadradoNums = (Nums) ^ 2
-	Nums = Incremento
-	Msgbox("O quadrado de ") & Incremento & ("é: ") & QuadradoNums
+While Nums < 151
+    QuadradoNums = Nums * Nums
+    Incremento = Nums + 1
+    Nums = Incremento
+    MsgBox ("O quadrado de ") & (Incremento - 1) & (" é: ") & QuadradoNums
 Wend
 End Sub
 
 Private Sub Exec32_Click()
-Dim Num, Fatorial as Integer
-Num = inputbox("Insira o número: ")
-While Num > 0
-	Num = Num * (Num - 1)
+Dim Num As Integer
+Dim Fatorial As Integer
+Num = InputBox("Insira o número: ")
+Fatorial = Num
+While Fatorial > 1
+    Fatorial = Fatorial - 1
+    Num = Fatorial * Num
 Wend
-MsgBox("O fatorial de ") & ("é ") & Num
+MsgBox ("O fatorial do número é: ") & Num
 End Sub
 
-Private Sub Exec33_Click()
-Dim 
-End Sub
-
-Private Sub Exe34_Click(
-Dim Valor, Multiplicador as Integer
-Valor = Inputbox("Insira o número desejado: ")
-Multiplicador = 0
-While Multiplicador < 11
-	Multiplicador = Multiplicador + 1
-	Valor = Valor * Multiplicador
-Wend
+Private Sub Exe34_Click()
+Dim Valor, Multiplicador, Resultado As Integer
+Valor = InputBox("Insira o número desejado: ")
+Multiplicador = -1
+While Multiplicador < 10
+    Multiplicador = Multiplicador + 1
+    Resultado = Valor * Multiplicador
+    MsgBox (Valor) & ("x") & (Multiplicador) & (" = ") & Resultado
+    Wend
 End Sub
 
 Private Sub Exec35_Click()
@@ -403,5 +405,5 @@ If Num1 < Num2 Then
 	Maior = Num2 and Menor = Num1
 	Else Maior = Num1 and Menor = Num2
 End If
-
+While 
 End Sub
