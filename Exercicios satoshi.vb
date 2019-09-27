@@ -398,15 +398,36 @@ While Multiplicador < 10
 End Sub
 
 Private Sub Exec35_Click()
-Dim Num1, Num2, Maior, Menor, Somatoria as Integer
+Dim Num1 as Integer
+Dim Num2 as Integer
+Dim Maior as Integer
+Dim Menor as Integer
+Dim Somatoria As Integer
 Num1 = InputBox("Insira o primeiro número:")
 Num2 = InputBox("Insira o segundo número:")
+Somatoria = 0
 If Num1 < Num2 Then
-	Maior = Num2 and Menor = Num1
-	Else Maior = Num1 and Menor = Num2
+    Maior = Num2
+	Menor = Num1
+    Else 
+		Maior = Num1
+		Menor = Num2
 End If
-	While Menor < Maior
-		If Menor mod 2 <> 0
-		Somatoria = Somatoria + Menor
-		
+If Menor Mod 2 <> 0 Then
+    Menor = Menor
+    Else
+    If Menor Mod 2 = 0 Then
+        Menor = Menor + 1
+    End If
+End If
+While Menor <= Maior
+	Somatoria = Somatoria + Menor
+	Menor = Menor + 2
+Wend
+MsgBox ("A somatória dos números ímpares entre o maior e o menor é: ") & Somatoria
+End Sub
+
+Private Sub Exec36_Click()
+Dim N, Serie as Double
+
 End Sub
