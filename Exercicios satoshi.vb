@@ -259,7 +259,7 @@ Valor = inputbox("Insira o valor:")
 				MsgBox("O valor não é divisível nem por três e nem por dois!")
 			End If
 		End If
-	End If
+	End If#FF0000
 End Sub
 
 Private Sub Exec25()
@@ -398,12 +398,15 @@ While Multiplicador < 10
 End Sub
 
 Private Sub Exec35_Click()
-Dim Num1, Num2, Maior, Menor, Somatória as Integer
+Dim Num1, Num2, Maior, Menor, Somatoria as Integer
 Num1 = InputBox("Insira o primeiro número:")
 Num2 = InputBox("Insira o segundo número:")
 If Num1 < Num2 Then
 	Maior = Num2 and Menor = Num1
 	Else Maior = Num1 and Menor = Num2
 End If
-While 
+	While Menor < Maior
+		If Menor mod 2 <> 0
+		Somatoria = Somatoria + Menor
+		
 End Sub
