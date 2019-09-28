@@ -470,5 +470,27 @@ Wend
 End Sub
 
 Private Sub Exec38_Click()
+Dim Maior, Menor, Contador, UserInput as Integer
+Contador = 1
+While Contador <= 5
+    UserInput = inputbox(("Insira o ") & Contador & ("° número:"))
+    Contador = Contador + 1
+    If Menor = 0 Then
+        Menor = UserInput
+        Maior = UserInput
+            Else
+            If UserInput < Menor Then
+                Menor = UserInput
+                Else
+                If UserInput > Maior Then
+                    Maior  = UserInput
+                End If
+            End If
+    End If
+Wend
+MsgBox(("Maior: ") & Maior & vbCrLf & ("Menor: ") & Menor)
+End Sub
+
+Private Sub Exec39_Click()
 Dim 
 End Sub
