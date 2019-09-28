@@ -499,7 +499,8 @@ MsgBox(("Maior: ") & Maior & vbCrLf & ("Menor: ") & Menor)
 End Sub
 
 Private Sub Exec39_Click()
-Dim Casa, Qnt, QntMU, GuarMult As Double
+Dim Casa, Qnt, QntMU As Integer 
+Dim GuarMult As Double
 Casa = 1
 Qnt = 1
 QntMU = 1
@@ -516,5 +517,39 @@ Wend
 End Sub
 
 Private Sub Exec40_Click()
+Dim Num1 As Integer
+Dim Num2 As Integer
+Dim Menor As Integer
+Dim Maior As Integer
+Dim Divisores As Integer
+Dim Cont As Double
+Num1 = inputbox("Insira o primeiro número:")
+Num2 = inputbox("Insira o segundo número:")
+Divisores = 0
+Cont = 1
+If Num1 < Num2 Then
+    Menor = Num1
+    Maior = Num2
+    Else
+        Menor = Num2
+        Maior = Num1
+End If
+While Menor <= Maior
+    While Cont <= Menor
+        If 0 = Menor Mod Cont Then
+            Divisores = Divisores + 1
+        End If
+        Cont = Cont + 1    
+    Wend
+    If Divisores = 2 Then
+        MsgBox(("O número ") & Menor & (" é primo!"))
+    End If
+    Menor = Menor + 1
+    Cont = 1
+    Divisores = 0
+Wend
+End Sub
+
+Private Sub Exec41_Click()
 Dim 
 End Sub
