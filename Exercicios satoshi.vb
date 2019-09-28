@@ -551,5 +551,24 @@ Wend
 End Sub
 
 Private Sub Exec41_Click()
+Dim D1 As Integer
+Dim D2 As Integer
+Dim Soma As Integer
+D1 = 1
+D2 = 1
+While D2 <= 6
+    While D1 <= 6
+            Soma = D1 + D2       
+        If Soma = 7 Then
+            MsgBox (("A soma de ") & D2 & ("+") & D1 & (" = ") & Soma)
+        End If
+        D1 = D1 + 1
+    Wend
+    D2 = D2 + 1
+    D1 = 1
+Wend
+End Sub
+
+Private Sub Exec42_Click()
 Dim 
 End Sub
