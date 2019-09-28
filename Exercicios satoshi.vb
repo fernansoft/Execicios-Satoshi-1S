@@ -470,10 +470,17 @@ Wend
 End Sub
 
 Private Sub Exec38_Click()
-Dim Maior, Menor, Contador, UserInput as Integer
+Dim Maior As Double
+Dim Menor As Double
+Dim Contador As Integer
+Dim UserInput As Double
 Contador = 1
-While Contador <= 5
+While Contador <= 100
     UserInput = inputbox(("Insira o ") & Contador & ("° número:"))
+    While UserInput < 0
+        MsgBox("Insira apenas números positivos!")
+        UserInput = inputbox(("Insira o ") & Contador & ("° número:"))
+    Wend
     Contador = Contador + 1
     If Menor = 0 Then
         Menor = UserInput
@@ -492,5 +499,22 @@ MsgBox(("Maior: ") & Maior & vbCrLf & ("Menor: ") & Menor)
 End Sub
 
 Private Sub Exec39_Click()
+Dim Casa, Qnt, QntMU, GuarMult As Double
+Casa = 1
+Qnt = 1
+QntMU = 1
+While Casa <= 64
+    If Casa = 1 Then
+        MsgBox (("Para a casa ") & Casa & (" temos 1 grão"))
+        Casa = Casa + 1
+    End If
+    GuarMult = Qnt * 2
+    Qnt = GuarMult
+    MsgBox (("Para a casa ") & Casa & (" temos ") & GuarMult & (" grãos"))
+    Casa = Casa + 1
+Wend
+End Sub
+
+Private Sub Exec40_Click()
 Dim 
 End Sub
