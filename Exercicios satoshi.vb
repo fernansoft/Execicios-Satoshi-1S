@@ -428,6 +428,46 @@ MsgBox ("A somatória dos números ímpares entre o maior e o menor é: ") & Som
 End Sub
 
 Private Sub Exec36_Click()
-Dim N, Serie as Double
+Dim N, Denominador, fracao, Fatorial, GuardarDenom as Double
+N = inputbox("Insira o enésimo número:")
+Denominador = 2
+Fatorial = 1
+While Denominador <= N
+	GuardarDenom = Denominador
+	While Denominador > 1
+		Denominador = Denominador - 1
+		Fatorial = Denominador * Fatorial
+	Wend
+	Denominador = Denominador + 1
+	Fracao = 1/Fatorial
 
+Wend
+	
+End Sub
+
+Private Sub Exe37_Click()
+Dim N As Double
+Dim Den As Double
+Dim Frac As Double
+Dim Fat As Double
+Dim FatR As Double
+Dim GuarDen As Double
+Dim GuarSeq As Double
+Dim SomSeq As Double
+N = InputBox("Insira o enésimo número:")
+Den = 1
+Fat = 1
+FatR = 1
+While Den <= N
+    FatR = Fat
+    While Fat > 1
+        Fat = Fat - 1
+        FatR = Fat * FatR
+    Wend
+    GuarSeq = 1 / FatR
+    SomSeq = SomSeq + GuarSeq
+    Den = Den + 1
+    Fat = Den
+Wend
+MsgBox ("O resultado é: ") & SomSeq
 End Sub
