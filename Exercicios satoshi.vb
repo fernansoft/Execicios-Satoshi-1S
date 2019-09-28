@@ -427,25 +427,7 @@ Wend
 MsgBox ("A somatória dos números ímpares entre o maior e o menor é: ") & Somatoria
 End Sub
 
-Private Sub Exec36_Click()
-Dim N, Denominador, fracao, Fatorial, GuardarDenom as Double
-N = inputbox("Insira o enésimo número:")
-Denominador = 2
-Fatorial = 1
-While Denominador <= N
-	GuardarDenom = Denominador
-	While Denominador > 1
-		Denominador = Denominador - 1
-		Fatorial = Denominador * Fatorial
-	Wend
-	Denominador = Denominador + 1
-	Fracao = 1/Fatorial
-
-Wend
-	
-End Sub
-
-Private Sub Exe37_Click()
+Private Sub Exe36_Click()
 Dim N As Double
 Dim Den As Double
 Dim Frac As Double
@@ -470,4 +452,23 @@ While Den <= N
     Fat = Den
 Wend
 MsgBox ("O resultado é: ") & SomSeq
+End Sub
+
+Private Sub Exec37_Click()
+Dim N, NMU, NMD, ValSoma, LimN As Double
+LimN = InputBox("Insira o enésimo número da sequência:")
+N = 1
+NMU = 0
+NMD = 1
+While N <= LimN
+    ValSoma = NMU + NMD
+    MsgBox ("Para N = " & N & " temos: " & NMD & " + " & NMU & " = " & ValSoma)
+    N = N + 1
+    NMD = NMU
+    NMU = ValSoma
+Wend
+End Sub
+
+Private Sub Exec38_Click()
+Dim 
 End Sub
