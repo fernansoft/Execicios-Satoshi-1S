@@ -586,5 +586,19 @@ Wend
 End Sub
 
 Private Sub Exec43_Click()
+Dim AltAna As Double
+Dim AltMaria As Double
+Dim Anos As Double
+AltAna = 1.1
+AltMaria = 1.5
+While AltAna <= AltMaria
+    AltAna = AltAna + 0.03
+    AltMaria = AltMaria + 0.02
+    Anos = Anos + 1
+Wend
+MsgBox (("A Ana terá a altura de Maria ao passar ") & Anos & (" anos"))
+End Sub
+
+Private Sub Exec44_Click()
 Dim 
 End Sub
