@@ -616,7 +616,42 @@ MsgBox (Multiplicador & ("^") & GuarExpoente & (" = ") & Base)
 End Sub
 
 Private Sub Exec45_Click()
-Dim
+Dim Numerador As Integer
+Dim Denominador As Integer
+Dim Fracao As Double
+Dim OperFrac As Double
+Dim SomaFrac As Double
+Numerador = 1
+While Numerador <= 15
+    Denominador = (Numerador * Numerador)
+    Fracao = (Numerador / Denominador)
+    If (0 = Numerador Mod 2) Then
+        OperFrac = OperFrac - Fracao
+        Else
+        If (0 <> Numerador Mod 2) Then
+            OperFrac = OperFrac + Fracao
+        End If
+    End If
+    If Numerador = 2 Then
+        MsgBox (("A soma de: ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" - ") & Numerador & ("/") & Denominador & " = " & OperFrac)
+        Else
+        If (3 < Numerador < 13) Then
+            If (0 = Numerador Mod 2) Then
+                MsgBox (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" - ") & Numerador & ("/") & Denominador & " = " & OperFrac & (" ..."))
+                Else
+                If (0 <> Numerador Mod 2) Then
+                    MsgBox (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" + ") & Numerador & ("/") & Denominador & " = " & OperFrac & (" ..."))
+                End If
+            End If
+        End If
+        If (Numerador = 15) Then
+            MsgBox (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" + ") & Numerador & ("/") & Denominador & " = " & OperFrac)
+        End If
+    End If
+    Numerador = (Numerador + 1)
+    SomaFrac = SomaFrac + OperFrac
+Wend
 End Sub
+
 
 Code by Fernando Oliveira da Costa
