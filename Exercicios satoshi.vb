@@ -591,14 +591,32 @@ Dim AltMaria As Double
 Dim Anos As Double
 AltAna = 1.1
 AltMaria = 1.5
-While AltAna <= AltMaria
+While AltAna > AltMaria
     AltAna = AltAna + 0.03
     AltMaria = AltMaria + 0.02
     Anos = Anos + 1
 Wend
-MsgBox (("A Ana terá a altura de Maria ao passar ") & Anos & (" anos"))
+MsgBox (("A Ana terá a altura de Maria ao passar ") & Anos & (" anos!"))
 End Sub
 
 Private Sub Exec44_Click()
-Dim 
+Dim Base As Double
+Dim Expoente As Double
+Dim GuarExpoente As Double
+Dim Multiplicador As Double
+Base = InputBox("Insira o valor da base:")
+Expoente = InputBox("Insira o valor do expoente:")
+Multiplicador = Base
+GuarExpoente = Expoente
+While Expoente > 1
+    Expoente = (Expoente - 1)
+    Base = (Base * Multiplicador)
+Wend
+MsgBox (Multiplicador & ("^") & GuarExpoente & (" = ") & Base)
 End Sub
+
+Private Sub Exec45_Click()
+Dim
+End Sub
+
+Code by Fernando Oliveira da Costa
