@@ -335,372 +335,377 @@ Início
     Mostra(("O jogo durou: ") & ((HrDoJogo / 60) - (HrDoJogo mod 60)) & "h e " & ((HrDoJogo mod 60) * 60) & "m")
 Fim_Algoritmo
 
-Private Sub Algoritmo - Exec26
-Declare Num1, Num2, Maior, Menor como Decimal
-Num1 = Receba("Insira o primeiro número:")
-Num2 = Receba("Insira o segundo número:")
-    Se Num1 = Num2 Então
-		Mostra("Os números são iguais!")
-	Fim_Se
-	Se Num1 > Num2 Então
-        Maior = Num1
-        Menor = Num2
-        Senão
-        Maior = Num2
-        Menor = Num1
-    Fim_Se
-    Se (0 = Maior Mod Menor) Então
-        Mostra (("O número ") & Maior & " é multiplo de " & Menor)
-        Senão
-        Mostra (("O número ") & Maior & " não é multiplo de " & Menor)
-    Fim_Se
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec27
-Declare Voltas, Extensao, Tempo, VelMed como Decimal
-Voltas = Receba("Insira a quantidade de voltas:")
-Extensao = Receba("Insira a extensão do circuito em metros:")
-Tempo = Receba("Insira o tempo de duração em minutos:")
-VelMed = ((Voltas * Extensao) / (Tempo*60))
-Velmed = Round(VelMed, 2)
-Mostra("A sua velocidade média foi de: ") & VelMed & "m/s"
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec28
-Declare PrecoAt como Decimal
-Declare	MedMensal como Inteiro
-Declare NovoPreco como Decimal
-MedMensal = Receba("Insira a média de vendas mensais:")
-PrecoAt = Receba("Insira o preço atual:")
-Se MedMensal<500 and PrecoAt<30 Então
-	NovoPreco = PrecoAt * 1.1
-	Senão
-	Se MedMensal < 1000 and PrecoAt >=30 and PrecoAt < 80 Então
-		NovoPreco = PrecoAt * 1.15
-		Senão
-		Se MedMensal >= 1000 and PrecoAt >= 80 Então
-			NovoPreco = PrecoAt * 0.95
-			Senão NovoPreco = PrecoAt
-		Fim_Se
-	Fim_Se
-Fim_Se
-Mostra("O novo preço do produto será: ") & NovoPreco
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec29
-Declare Investimento, ValInvest, RenDeclareento como Decimal
-Investimento = Receba(("Insira o tipo do investimento:") & (Quebra_de_Linha) & ("1 = Poupança") & (Quebra_de_Linha) & ("2 = Renda Fixa"))
-Enquanto Investimento > 2
-    Mostra ("Só é possível inserir 1 ou 2 (respectivamente Poupança e Renda Fixa)")
-    Investimento = Receba(("Insira o tipo do investimento: ") & (Quebra_de_Linha) & ("1 = Poupança") & (Quebra_de_Linha) & ("2 = Renda Fixa"))
-Fim_Enquanto
-ValInvest = Receba("Insira qual o valor que pretende investir:")
-Enquanto ValInvest < 0
-    Mostra ("Insira apenas valores positivos!")
-    ValInvest = Receba("Insira qual o valor que pretende investir:")
-Fim_Enquanto
-Se Investimento = 1 Então
-RenDeclareento = ValInvest * 1.03
-    Senão
-    Se Investimento = 2 Então
-    RenDeclareento = ValInvest * 1.05
-Fim_Se
-Fim_Se
-Mostra ("O valor bruto na sua conta serà de: ") & RenDeclareento
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec30
-
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec31
-Declare Nums, QuadradoNums, Incremento como Inteiro
-Nums = 10
-Enquanto Nums < 151
-    QuadradoNums = Nums * Nums
-    Incremento = Nums + 1
-    Nums = Incremento
-    Mostra ("O quadrado de ") & (Incremento - 1) & (" é: ") & QuadradoNums
-Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec32
-Declare Num como Inteiro
-Declare Fatorial como Inteiro
-Num = Receba("Insira o número: ")
-Fatorial = Num
-Enquanto Fatorial > 1
-    Fatorial = Fatorial - 1
-    Num = Fatorial * Num
-Fim_Enquanto
-Mostra ("O fatorial do número é: ") & Num
-Fim_Algoritmo
-
-Private Sub Exe34
-Declare Valor, Multiplicador, Resultado como Inteiro
-Valor = Receba("Insira o número desejado: ")
-Multiplicador = -1
-Enquanto Multiplicador < 10
-    Multiplicador = Multiplicador + 1
-    Resultado = Valor * Multiplicador
-    Mostra (Valor) & ("x") & (Multiplicador) & (" = ") & Resultado
-    Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec35
-Declare Num1 como Inteiro
-Declare Num2 como Inteiro
-Declare Maior como Inteiro
-Declare Menor como Inteiro
-Declare Somatoria como Inteiro
-Num1 = Receba("Insira o primeiro número:")
-Num2 = Receba("Insira o segundo número:")
-Somatoria = 0
-Se Num1 < Num2 Então
-    Maior = Num2
-	Menor = Num1
-    Senão 
-		Maior = Num1
-		Menor = Num2
-Fim_Se
-Se Menor Mod 2 <> 0 Então
-    Menor = Menor
-    Senão
-    Se Menor Mod 2 = 0 Então
-        Menor = Menor + 1
-    Fim_Se
-Fim_Se
-Enquanto Menor <= Maior
-	Somatoria = Somatoria + Menor
-	Menor = Menor + 2
-Fim_Enquanto
-Mostra ("A somatória dos números ímpares entre o maior e o menor é: ") & Somatoria
-Fim_Algoritmo
-
-Private Sub Exe36
-Declare N como Decimal
-Declare Den como Decimal
-Declare Frac como Decimal
-Declare Fat como Decimal
-Declare FatR como Decimal
-Declare GuarDen como Decimal
-Declare GuarSeq como Decimal
-Declare SomSeq como Decimal
-N = Receba("Insira o enésimo número:")
-Den = 1
-Fat = 1
-FatR = 1
-Enquanto Den <= N
-    FatR = Fat
-    Enquanto Fat > 1
-        Fat = Fat - 1
-        FatR = Fat * FatR
-    Fim_Enquanto
-    GuarSeq = 1 / FatR
-    SomSeq = SomSeq + GuarSeq
-    Den = Den + 1
-    Fat = Den
-Fim_Enquanto
-Mostra ("O resultado é: ") & SomSeq
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec37
-Declare N, NMU, NMD, ValSoma, LimN como Decimal
-LimN = Receba("Insira o enésimo número da sequência:")
-N = 1
-NMU = 0
-NMD = 1
-Enquanto N <= LimN
-    ValSoma = NMU + NMD
-    Mostra ("Para N = " & N & " temos: " & NMD & " + " & NMU & " = " & ValSoma)
-    N = N + 1
-    NMD = NMU
-    NMU = ValSoma
-Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec38
-Declare Maior como Decimal
-Declare Menor como Decimal
-Declare Contador como Inteiro
-Declare UserInput como Decimal
-Contador = 1
-Enquanto Contador <= 100
-    UserInput = Receba(("Insira o ") & Contador & ("° número:"))
-    Enquanto UserInput < 0
-        Mostra("Insira apenas números positivos!")
-        UserInput = Receba(("Insira o ") & Contador & ("° número:"))
-    Fim_Enquanto
-    Contador = Contador + 1
-    Se Menor = 0 Então
-        Menor = UserInput
-        Maior = UserInput
+Algoritmo - Exec26
+Declare
+    Num1, Num2, Maior, Menor como Decimal
+Início
+    Num1 = Receba("Insira o primeiro número:")
+    Num2 = Receba("Insira o segundo número:")
+        Se (Num1 = Num2) Então
+    		Mostra("Os números são iguais!")
+    	Fim_Se
+    	Se (Num1 > Num2) Então
+            Maior = Num1
+            Menor = Num2
             Senão
-            Se UserInput < Menor Então
-                Menor = UserInput
-                Senão
-                Se UserInput > Maior Então
-                    Maior  = UserInput
-                Fim_Se
-            Fim_Se
-    Fim_Se
-Fim_Enquanto
-Mostra(("Maior: ") & Maior & (Quebra_de_Linha) & ("Menor: ") & Menor)
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec39
-Declare Casa, Qnt, QntMU como Inteiro 
-Declare GuarMult como Decimal
-Casa = 1
-Qnt = 1
-QntMU = 1
-Enquanto Casa <= 64
-    Se Casa = 1 Então
-        Mostra (("Para a casa ") & Casa & (" temos 1 grão"))
-        Casa = Casa + 1
-    Fim_Se
-    GuarMult = Qnt * 2
-    Qnt = GuarMult
-    Mostra (("Para a casa ") & Casa & (" temos ") & GuarMult & (" grãos"))
-    Casa = Casa + 1
-Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec40
-Declare Num1 como Inteiro
-Declare Num2 como Inteiro
-Declare Menor como Inteiro
-Declare Maior como Inteiro
-Declare Divisores como Inteiro
-Declare Cont como Decimal
-Num1 = Receba("Insira o primeiro número:")
-Num2 = Receba("Insira o segundo número:")
-Divisores = 0
-Cont = 1
-Se Num1 < Num2 Então
-    Menor = Num1
-    Maior = Num2
-    Senão
-        Menor = Num2
-        Maior = Num1
-Fim_Se
-Enquanto Menor <= Maior
-    Enquanto Cont <= Menor
-        Se 0 = Menor Mod Cont Então
-            Divisores = Divisores + 1
+            Maior = Num2
+            Menor = Num1
         Fim_Se
-        Cont = Cont + 1    
-    Fim_Enquanto
-    Se Divisores = 2 Então
-        Mostra(("O número ") & Menor & (" é primo!"))
+        Se (0 = Maior Mod Menor) Então
+            Mostra (("O número ") & Maior & " é multiplo de " & Menor)
+            Senão
+                Mostra (("O número ") & Maior & " não é multiplo de " & Menor)
+        Fim_Se
+Fim_Algoritmo
+
+Algoritmo - Exec27
+Declare
+    Voltas, Extensao, Tempo, VelMed como Decimal
+Início
+    Voltas = Receba("Insira a quantidade de voltas:")
+    Extensao = Receba("Insira a extensão do circuito em metros:")
+    Tempo = Receba("Insira o tempo de duração em minutos:")
+    VelMed = ((Voltas * Extensao) / (Tempo*60))
+    Velmed = Arrendonde(VelMed, 2)
+    Mostra(("A sua velocidade média foi de: ") & VelMed & ("m/s"))
+Fim_Algoritmo
+
+Algoritmo - Exec28
+Declare
+    PrecoAt, NovoPreco como Decimal
+Declare
+    MedMensal como Inteiro
+Início
+    MedMensal = Receba("Insira a média de vendas mensais:")
+    PrecoAt = Receba("Insira o preço atual:")
+    Se (MedMensal<500 and PrecoAt<30) Então
+    	NovoPreco = (PrecoAt * 1.1)
+    	Senão
+    	Se (MedMensal < 1000 and PrecoAt >=30 and PrecoAt < 80) Então
+    		NovoPreco = (PrecoAt * 1.15)
+    		Senão
+    		Se (MedMensal >= 1000 and PrecoAt >= 80) Então
+    			NovoPreco = (PrecoAt * 0.95)
+    			Senão NovoPreco = PrecoAt
+    		Fim_Se
+    	Fim_Se
     Fim_Se
-    Menor = Menor + 1
-    Cont = 1
+    Mostra(("O novo preço do produto será: ") & NovoPreco)
+Fim_Algoritmo
+
+Algoritmo - Exec29
+Declare
+    Investimento, ValInvest, Rendimento como Decimal
+Início
+    Investimento = Receba(("Insira o tipo do investimento:") & (Quebra_de_Linha) & ("1 = Poupança") & (Quebra_de_Linha) & ("2 = Renda Fixa"))
+    Enquanto (Investimento > 2)
+        Mostra ("Só é possível inserir 1 ou 2 (respectivamente Poupança e Renda Fixa)")
+        Investimento = Receba(("Insira o tipo do investimento: ") & (Quebra_de_Linha) & ("1 = Poupança") & (Quebra_de_Linha) & ("2 = Renda Fixa"))
+    Fim_Enquanto
+    ValInvest = Receba("Insira qual o valor que pretende investir:")
+    Enquanto ValInvest < 0
+        Mostra ("Insira apenas valores positivos!")
+        ValInvest = Receba("Insira qual o valor que pretende investir:")
+    Fim_Enquanto
+    Se Investimento = 1 Então
+    Rendimento = (ValInvest * 1.03)
+        Senão
+        Se Investimento = 2 Então
+        Rendimento = (ValInvest * 1.05)
+    Fim_Se
+    Fim_Se
+    Mostra (("O valor bruto na sua conta serà de: ") & Rendimento)
+Fim_Algoritmo
+
+Algoritmo - Exec31
+Declare
+    Nums, QuadradoNums, Incremento como Inteiro
+Início
+    Nums = 10
+    Enquanto (Nums < 151)
+        QuadradoNums = (Nums * Nums)
+        Incremento = (Nums + 1)
+        Nums = Incremento
+        Mostra (("O quadrado de ") & (Incremento - 1) & (" é: ") & QuadradoNums)
+    Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec32
+Declare
+    Num, Fatorial como Inteiro
+Início
+    Num = Receba("Insira o número: ")
+    Fatorial = Num
+    Enquanto (Fatorial > 1)
+        Fatorial = (Fatorial - 1)
+        Num = (Fatorial * Num)
+    Fim_Enquanto
+    Mostra (("O fatorial do número é: ") & Num)
+Fim_Algoritmo
+
+Algoritmo - Exec34
+Declare
+    Valor, Multiplicador, Resultado como Inteiro
+Início
+    Valor = Receba("Insira o número desejado: ")
+    Multiplicador = -1
+    Enquanto Multiplicador < 10
+        Multiplicador = (Multiplicador + 1)
+        Resultado = (Valor * Multiplicador)
+        Mostra ((Valor) & ("x") & (Multiplicador) & (" = ") & Resultado)
+        Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec35
+Declare
+    Num1, Num2, Maior, Menor, Somatoria como Inteiro
+Início
+    Num1 = Receba("Insira o primeiro número:")
+    Num2 = Receba("Insira o segundo número:")
+    Somatoria = 0
+    Se (Num1 < Num2) Então
+        Maior = Num2
+    	Menor = Num1
+        Senão 
+    		Maior = Num1
+    		Menor = Num2
+    Fim_Se
+    Se (Menor Mod 2 <> 0) Então
+        Menor = Menor
+        Senão
+        Se Menor Mod 2 = 0 Então
+            Menor = Menor + 1
+        Fim_Se
+    Fim_Se
+    Enquanto (Menor <= Maior)
+    	Somatoria = (Somatoria + Menor)
+    	Menor = (Menor + 2)
+    Fim_Enquanto
+    Mostra (("A somatória dos números ímpares entre o maior e o menor é: ") & Somatoria)
+Fim_Algoritmo
+
+Algoritmo - Exec36
+Declare
+    N, Den, Frac, Fat, FatR, GuarDen, GuarSeq, SomSeq como Decimal
+Início
+    N = Receba("Insira o enésimo número:")
+    Den = 1
+    Fat = 1
+    FatR = 1
+    Enquanto (Den <= N)
+        FatR = Fat
+        Enquanto (Fat > 1)
+            Fat = (Fat - 1)
+            FatR = (Fat * FatR)
+        Fim_Enquanto
+        GuarSeq = (1 / FatR)
+        SomSeq = (SomSeq + GuarSeq)
+        Den = (Den + 1)
+        Fat = Den
+    Fim_Enquanto
+    Mostra (("O resultado é: ") & SomSeq)
+Fim_Algoritmo
+
+Algoritmo - Exec37
+Declare
+    N, NMU, NMD, ValSoma, LimN como Decimal
+Início
+    LimN = Receba("Insira o enésimo número da sequência:")
+    N = 1
+    NMU = 0
+    NMD = 1
+    Enquanto (N <= LimN)
+        ValSoma = (NMU + NMD)
+        Mostra (("Para N = ") & N & (" temos: ") & NMD & (" + ") & NMU & (" = ") & ValSoma)
+        N = N + 1
+        NMD = NMU
+        NMU = ValSoma
+    Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec38
+Declare
+    Maior, Menor, UserInput como Decimal
+Declare
+    Contador como Inteiro
+Início
+    Contador = 1
+    Enquanto (Contador <= 100)
+        UserInput = Receba(("Insira o ") & Contador & ("° número:"))
+        Enquanto (UserInput < 0)
+            Mostra("Insira apenas números positivos!")
+            UserInput = Receba(("Insira o ") & Contador & ("° número:"))
+        Fim_Enquanto
+        Contador = (Contador + 1)
+        Se (Menor = 0) Então
+            Menor = UserInput
+            Maior = UserInput
+                Senão
+                Se (UserInput < Menor) Então
+                    Menor = UserInput
+                    Senão
+                    Se (UserInput > Maior) Então
+                        Maior  = UserInput
+                    Fim_Se
+                Fim_Se
+        Fim_Se
+    Fim_Enquanto
+    Mostra(("Maior: ") & Maior & (Quebra_de_Linha) & ("Menor: ") & Menor)
+Fim_Algoritmo
+
+Algoritmo - Exec39
+Declare
+    Casa, Qnt, QntMU como Inteiro 
+Declare
+    GuarMult como Decimal
+Início
+    Casa = 1
+    Qnt = 1
+    QntMU = 1
+    Enquanto (Casa <= 64)
+        Se Casa = 1 Então
+            Mostra (("Para a casa ") & Casa & (" temos 1 grão"))
+            Casa = (Casa + 1)
+        Fim_Se
+        GuarMult = (Qnt * 2)
+        Qnt = GuarMult
+        Mostra (("Para a casa ") & Casa & (" temos ") & GuarMult & (" grãos"))
+        Casa = (Casa + 1)
+    Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec40
+Declare
+    Num1, Num2, Menor, Maior, Divisores como Inteiro
+Declare
+    Cont como Decimal
+Início
+    Num1 = Receba("Insira o primeiro número:")
+    Num2 = Receba("Insira o segundo número:")
     Divisores = 0
-Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec41
-Declare D1 como Inteiro
-Declare D2 como Inteiro
-Declare Soma como Inteiro
-D1 = 1
-D2 = 1
-Enquanto D2 <= 6
-    Enquanto D1 <= 6
-            Soma = D1 + D2       
-        Se Soma = 7 Então
-            Mostra (("A soma de ") & D2 & ("+") & D1 & (" = ") & Soma)
-        Fim_Se
-        D1 = D1 + 1
-    Fim_Enquanto
-    D2 = D2 + 1
-    D1 = 1
-Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec42
-Declare N1 como Decimal
-Declare N2 como Decimal
-Declare Soma como Decimal
-Declare Div como Decimal
-N1 = 1
-N2 = 1
-Enquanto N1 <= 50
-    Div = N1 / N2
-    Soma = Soma + Div
-    Mostra (("O ") & N1 & ("° termo, sendo: ") & N1 & ("/") & N2 & (" = ") & Soma)
-    N1 = N1 + 1
-    N2 = N2 + 2
-Fim_Enquanto
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec43
-Declare AltAna como Decimal
-Declare AltMaria como Decimal
-Declare Anos como Decimal
-AltAna = 1.1
-AltMaria = 1.5
-Enquanto AltAna > AltMaria
-    AltAna = AltAna + 0.03
-    AltMaria = AltMaria + 0.02
-    Anos = Anos + 1
-Fim_Enquanto
-Mostra (("A Ana terá a altura de Maria ao passar ") & Anos & (" anos!"))
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec44
-Declare Base como Decimal
-Declare Expoente como Decimal
-Declare GuarExpoente como Decimal
-Declare Multiplicador como Decimal
-Base = Receba("Insira o valor da base:")
-Expoente = Receba("Insira o valor do expoente:")
-Multiplicador = Base
-GuarExpoente = Expoente
-Enquanto Expoente > 1
-    Expoente = (Expoente - 1)
-    Base = (Base * Multiplicador)
-Fim_Enquanto
-Mostra (Multiplicador & ("^") & GuarExpoente & (" = ") & Base)
-Fim_Algoritmo
-
-Private Sub Algoritmo - Exec45
-Declare Numerador como Inteiro
-Declare Denominador como Inteiro
-Declare Fracao como Decimal
-Declare OperFrac como Decimal
-Declare SomaFrac como Decimal
-Numerador = 1
-Enquanto Numerador <= 15
-    Denominador = (Numerador * Numerador)
-    Fracao = (Numerador / Denominador)
-    Se (0 = Numerador Mod 2) Então
-        OperFrac = OperFrac - Fracao
+    Cont = 1
+    Se (Num1 < Num2) Então
+        Menor = Num1
+        Maior = Num2
         Senão
-        Se (0 <> Numerador Mod 2) Então
-            OperFrac = OperFrac + Fracao
-        Fim_Se
+            Menor = Num2
+            Maior = Num1
     Fim_Se
-    Se Numerador = 2 Então
-        Mostra (("A soma de: ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" - ") & Numerador & ("/") & Denominador & " = " & OperFrac)
-        Senão
-        Se (3 < Numerador < 13) Então
-            Se (0 = Numerador Mod 2) Então
-                Mostra (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" - ") & Numerador & ("/") & Denominador & " = " & OperFrac & (" ..."))
-                Senão
-                Se (0 <> Numerador Mod 2) Então
-                    Mostra (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" + ") & Numerador & ("/") & Denominador & " = " & OperFrac & (" ..."))
-                Fim_Se
+    Enquanto (Menor <= Maior)
+        Enquanto (Cont <= Menor)
+            Se (0 = Menor Mod Cont) Então
+                Divisores = (Divisores + 1)
+            Fim_Se
+            Cont = (Cont + 1)
+        Fim_Enquanto
+        Se (Divisores = 2) Então
+            Mostra(("O número ") & Menor & (" é primo!"))
+        Fim_Se
+        Menor = (Menor + 1)
+        Cont = 1
+        Divisores = 0
+    Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec41
+Declare
+    D1, D2, Soma como Inteiro
+Início
+    D1 = 1
+    D2 = 1
+    Enquanto (D2 <= 6)
+        Enquanto (D1 <= 6)
+                Soma = (D1 + D2)
+            Se (Soma = 7) Então
+                Mostra (("A soma de ") & D2 & ("+") & D1 & (" = ") & Soma)
+            Fim_Se
+            D1 = (D1 + 1)
+        Fim_Enquanto
+        D2 = (D2 + 1)
+        D1 = 1
+    Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec42
+Declare
+    N1, N2, Soma, Div como Decimal
+Início
+    N1 = 1
+    N2 = 1
+    Enquanto (N1 <= 50)
+        Div = (N1 / N2)
+        Soma = (Soma + Div)
+        Mostra (("O ") & N1 & ("° termo, sendo: ") & N1 & ("/") & N2 & (" = ") & Soma)
+        N1 = (N1 + 1)
+        N2 = (N2 + 2)
+    Fim_Enquanto
+Fim_Algoritmo
+
+Algoritmo - Exec43
+Declare
+    AltAna, AltMaria, Anos como Decimal
+Início
+    AltAna = 1.1
+    AltMaria = 1.5
+    Enquanto (AltAna > AltMaria)
+        AltAna = (AltAna + 0.03)
+        AltMaria = (AltMaria + 0.02)
+        Anos = (Anos + 1)
+    Fim_Enquanto
+    Mostra (("A Ana terá a altura de Maria ao passar ") & Anos & (" anos!"))
+Fim_Algoritmo
+
+Algoritmo - Exec44
+Declare
+    Base, Expoente, GuarExpoente, Multiplicador como Decimal
+Início
+    Base = Receba("Insira o valor da base:")
+    Expoente = Receba("Insira o valor do expoente:")
+    Multiplicador = Base
+    GuarExpoente = Expoente
+    Enquanto (Expoente > 1)
+        Expoente = (Expoente - 1)
+        Base = (Base * Multiplicador)
+    Fim_Enquanto
+    Mostra (Multiplicador & ("^") & GuarExpoente & (" = ") & Base)
+Fim_Algoritmo
+
+Algoritmo - Exec45
+Declare
+    Numerador, Denominador como Inteiro
+Declare
+    Fracao, OperFrac, SomaFrac como Decimal
+Início
+    Numerador = 1
+    Enquanto Numerador <= 15
+        Denominador = (Numerador * Numerador)
+        Fracao = (Numerador / Denominador)
+        Se (0 = Numerador Mod 2) Então
+            OperFrac = (OperFrac - Fracao)
+            Senão
+            Se (0 <> Numerador Mod 2) Então
+                OperFrac = (OperFrac + Fracao)
             Fim_Se
         Fim_Se
-        Se (Numerador = 15) Então
-            Mostra (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" + ") & Numerador & ("/") & Denominador & " = " & OperFrac)
+        Se (Numerador = 2) Então
+            Mostra (("A soma de: ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" - ") & Numerador & ("/") & Denominador & " = " & OperFrac)
+            Senão
+            Se (3 < Numerador < 13) Então
+                Se (0 = Numerador Mod 2) Então
+                    Mostra (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" - ") & Numerador & ("/") & Denominador & " = " & OperFrac & (" ..."))
+                    Senão
+                    Se (0 <> Numerador Mod 2) Então
+                        Mostra (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" + ") & Numerador & ("/") & Denominador & " = " & OperFrac & (" ..."))
+                    Fim_Se
+                Fim_Se
+            Fim_Se
+            Se (Numerador = 15) Então
+                Mostra (("A soma de: ... ") & (Numerador - 1) & ("/") & ((Numerador - 1) ^ 2) & (" + ") & Numerador & ("/") & Denominador & " = " & OperFrac)
+            Fim_Se
         Fim_Se
-    Fim_Se
-    Numerador = (Numerador + 1)
-    SomaFrac = SomaFrac + OperFrac
-Fim_Enquanto
+        Numerador = (Numerador + 1)
+        SomaFrac = (SomaFrac + OperFrac)
+    Fim_Enquanto
 Fim_Algoritmo
 
 
