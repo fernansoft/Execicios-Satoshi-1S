@@ -570,5 +570,21 @@ Wend
 End Sub
 
 Private Sub Exec42_Click()
+Dim N1 As Double
+Dim N2 As Double
+Dim Soma As Double
+Dim Div As Double
+N1 = 1
+N2 = 1
+While N1 <= 50
+    Div = N1 / N2
+    Soma = Soma + Div
+    MsgBox (("O ") & N1 & ("° termo, sendo: ") & N1 & ("/") & N2 & (" = ") & Soma)
+    N1 = N1 + 1
+    N2 = N2 + 2
+Wend
+End Sub
+
+Private Sub Exec43_Click()
 Dim 
 End Sub
