@@ -42,4 +42,3 @@ def fsumfrac(n):
     den = den + 1
     return s
 print('o resultado é: ', fsumfrac(num))
-    
