@@ -75,14 +75,18 @@ for i in range (5):
   if vet[i] > media:
     contadoracimadamedia += 1
   elif vet[i] < media:
-    vetposicoesabaixodamedia.append(vet[i])
+    vetposicoesabaixodamedia.append(i)
 print('A média do grupo é: {}\nSendo {} dessas notas acima da média\nCom as seguintes posições sendo com notas abaixo da média:\n{}'.format(media, contadoracimadamedia, vetposicoesabaixodamedia[0:]))
 
 
-5. Criar e coletar em um vetor [20] inteiro. Calcule e exiba, segundo:
-10
-∑ (A[1] – A[21–1])
-i = 1
+#5. Criar e coletar em um vetor [20] inteiro. Calcule e exiba, segundo:
+#10
+#∑ (A[1] – A[21–1])
+#i = 1"""
+vet = []
+
+
+
 6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor 
 em ordem crescente e mostre os dados.
 7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e 
