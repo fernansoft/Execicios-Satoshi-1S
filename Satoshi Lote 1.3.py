@@ -25,7 +25,7 @@ vet2 = []
 maior = 0
 menor = 0
 somadamedia = 0
-for i in range (5):
+for i in range (100):
   vet2.append(int(input('Insira o {}° número: '.format(i + 1))))
   if i == 0:
       menor = vet2[i]
@@ -37,12 +37,11 @@ for i in range (5):
 print('O maior valor é {} e o menor valor é {};\nA média dos valores inseridos é {}'.format(maior, menor, somadamedia/len(vet2)))
 
 
-#3. Criar e coletar valores inteiros nos vetores VT1[3] e VT2[3]. Concatenar esses 
-#valores em um 3º vetor (VT3[6]) e mostrar os seus dados. P. ex:
+#3. Criar e coletar valores inteiros nos vetores VT1[3] e VT2[3]. Concatenar esses valores em um 3º vetor (VT3[6]) e mostrar os seus dados. P. ex:
 #VT1| 1| 2| 3| |VT2| 4| 5| 6| |VT3| 1| 2| 3| 4| 5| 6
-vet1[3]
-vet2[3]
-vet3[6]
+vet1 = []
+vet2 = []
+vet3 = []
 for i in range (3):
   vet1.append(int(input('Insira o {}° número da primeira sequência: '.format(i+1))))
 for i in range (3):
@@ -51,13 +50,26 @@ for i in range (6):
   if i < 3:
     vet3.append(vet1[i])
   elif i > 2:
-    vet3.append(vet2[i])
+    r = i - 3
+    vet3.append(vet2[r])
+print(vet3[0:])
 
 
-4. Criar e coletar em um vetor [30] real e calcular e exibir:
-a. A média do grupo;
-b. A quantidade de notas acima do grupo;
-c. As posições dos valores abaixo da média do grupo.
+#4. Criar e coletar em um vetor [30] real e calcular e exibir:
+#a. A média do grupo;
+#b. A quantidade de notas acima do média;
+#c. As posições dos valores abaixo da média do grupo.
+vet = []
+somadamedia = 0
+contadormedia = 0
+for i in range (5):
+  vet.append(int(input('Insira o {}° número: '.format(i+1))))
+  somadamedia += vet[i]
+  contadormedia += 1
+
+
+
+
 5. Criar e coletar em um vetor [20] inteiro. Calcule e exiba, segundo:
 10
 ∑ (A[1] – A[21–1])
