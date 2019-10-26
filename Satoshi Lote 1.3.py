@@ -55,19 +55,28 @@ for i in range (6):
 print(vet3[0:])
 
 
-#4. Criar e coletar em um vetor [30] real e calcular e exibir:
+#4. Criar e coletar em um vetor [30] real, calcular e exibir:
 #a. A média do grupo;
 #b. A quantidade de notas acima do média;
 #c. As posições dos valores abaixo da média do grupo.
 vet = []
+vetposicoesabaixodamedia = []
 somadamedia = 0
 contadormedia = 0
+contadoracimadamedia = 0
+#receber os valores do vetor e calcular a média
 for i in range (5):
   vet.append(int(input('Insira o {}° número: '.format(i+1))))
   somadamedia += vet[i]
   contadormedia += 1
-
-
+media = somadamedia / contadormedia
+#calcular quantos estão abaixo da média
+for i in range (5):
+  if vet[i] > media:
+    contadoracimadamedia += 1
+  elif vet[i] < media:
+    vetposicoesabaixodamedia.append(vet[i])
+print('A média do grupo é: {}\nSendo {} dessas notas acima da média\nCom as seguintes posições sendo com notas abaixo da média:\n{}'.format(media, contadoracimadamedia, vetposicoesabaixodamedia[0:]))
 
 
 5. Criar e coletar em um vetor [20] inteiro. Calcule e exiba, segundo:
