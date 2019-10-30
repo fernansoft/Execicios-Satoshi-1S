@@ -89,16 +89,6 @@ print('A média do grupo é: {}\nSendo {} dessas notas acima da média\nCom as s
 vet = []
 
 
-
-
-#6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor em ordem crescente e mostre os dados.
-#7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
-#8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
-#a. A quantidade de cada produto vendido no mês;
-#b. A quantidade de produtos vendidos por semana;
-#c. O total de produtos vendidos no mês.
-
-
 #6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor em ordem crescente e mostre os dados.
 vet = []
 vetsorted = []
@@ -124,3 +114,10 @@ def fbinarysearch(n):
   while coletor != num:
     metadedovetor = ((len(vetsorted))/2)
     if vetsorted[metadedovetor] < num:
+
+
+
+#8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
+#a. A quantidade de cada produto vendido no mês;
+#b. A quantidade de produtos vendidos por semana;
+#c. O total de produtos vendidos no mês.
