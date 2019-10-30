@@ -97,3 +97,30 @@ vet = []
 #a. A quantidade de cada produto vendido no mês;
 #b. A quantidade de produtos vendidos por semana;
 #c. O total de produtos vendidos no mês.
+
+
+#6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor em ordem crescente e mostre os dados.
+vet = []
+vetsorted = []
+maior = 0
+menor = 0
+for i in range(20):
+	vet.append(int(input('Insira o {}° número do vetor: '.format(i+1))))
+	if i == 1:
+	  menor = vet[i]
+	elif vet[i] < menor:
+	  menor = vet[i]
+vetsorted.append(menor)
+while len(vetsorted) < 20:
+    for verif in range(len(vet)):
+    	if ((menor + 1) == (vet[verif])):
+    		menor = vet[verif]
+    		vetsorted.append(menor)
+    menor += 1
+print('Os valores dispostos em ordem crescente ficam {}'.format(vetsorted[0:]))
+#7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
+num = int(input('Insira um valor a ser procurado: '))
+def fbinarysearch(n):
+  while coletor != num:
+    metadedovetor = ((len(vetsorted))/2)
+    if vetsorted[metadedovetor] < num:
