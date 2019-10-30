@@ -8,7 +8,7 @@ somadamedia = 0
 contadormedia = 0
 somadosimpares = 0
 for i in range(50):
-  vet1.append(int(input('digite o {}° número: '.format(i+1))))
+  vet1.append(float(input('digite o {}° número: '.format(i+1))))
   if vet1[i] > 10 and vet1[i] < 200:
   	somadamedia += vet1[i]
   	contadormedia += 1
@@ -25,7 +25,7 @@ vet2 = []
 maior = 0
 menor = 0
 somadamedia = 0
-for i in range (100):
+for i in range (10):
   vet2.append(int(input('Insira o {}° número: '.format(i + 1))))
   if i == 0:
       menor = vet2[i]
@@ -42,15 +42,18 @@ print('O maior valor é {} e o menor valor é {};\nA média dos valores inserido
 vet1 = []
 vet2 = []
 vet3 = []
+#Coletar dados no primeiro vetor
 for i in range (3):
   vet1.append(int(input('Insira o {}° número da primeira sequência: '.format(i+1))))
+#Coletar dados no segundo vetor
 for i in range (3):
   vet2.append(int(input('Insira o {}° número da segunda sequência: '.format(i+1))))
-for i in range (6):
-  if i < 3:
+#Concatenar o primeiro vetor e o segundo vetor em um terceiro vetor
+for i in range (len(vet1) + len(vet2)):
+  if i < len(vet1):
     vet3.append(vet1[i])
-  elif i > 2:
-    r = i - 3
+  elif i > len(vet2):
+    r = i - len(vet1)
     vet3.append(vet2[r])
 print(vet3[0:])
 
@@ -82,17 +85,15 @@ print('A média do grupo é: {}\nSendo {} dessas notas acima da média\nCom as s
 #5. Criar e coletar em um vetor [20] inteiro. Calcule e exiba, segundo:
 #10
 #∑ (A[1] – A[21–1])
-#i = 1"""
+#i = 1
 vet = []
 
 
 
-6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor 
-em ordem crescente e mostre os dados.
-7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e 
-verificar a sua existência no vetor (utilizar pesquisa binária).
-8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos 
-vendidos em 4 semanas. Calcular e exibir:
-a. A quantidade de cada produto vendido no mês;
-b. A quantidade de produtos vendidos por semana;
-c. O total de produtos vendidos no mês.
+
+#6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor em ordem crescente e mostre os dados.
+#7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
+#8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
+#a. A quantidade de cada produto vendido no mês;
+#b. A quantidade de produtos vendidos por semana;
+#c. O total de produtos vendidos no mês.
