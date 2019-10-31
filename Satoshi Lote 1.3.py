@@ -108,16 +108,33 @@ while len(vetsorted) < 20:
     		vetsorted.append(menor)
     menor += 1
 print('Os valores dispostos em ordem crescente ficam {}'.format(vetsorted[0:]))
-#7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
-num = int(input('Insira um valor a ser procurado: '))
+# 7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
+vet = []
+for i in range(30):
+  vet.append(i*2)
+print(vet)
+num = int(input('Insira o valor a ser procurado: '))
+rangevet = len(vet)
+halfvet = rangevet//2
+begin = 0
+end = 0
 def fbinarysearch(n):
-  while coletor != num:
-    metadedovetor = ((len(vetsorted))/2)
-    if vetsorted[metadedovetor] < num:
+  if begin == num:
+    return n[halfvet]
+  elif n[halfvet] >= num:
+    end = n[halfvet]
+  elif n[halfvet] >= num:
+    end = n[halfvet]
 
 
 
-#8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
-#a. A quantidade de cada produto vendido no mês;
-#b. A quantidade de produtos vendidos por semana;
-#c. O total de produtos vendidos no mês.
+
+
+
+
+
+
+# 8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
+# a. A quantidade de cada produto vendido no mês;
+# b. A quantidade de produtos vendidos por semana;
+# c. O total de produtos vendidos no mês.
