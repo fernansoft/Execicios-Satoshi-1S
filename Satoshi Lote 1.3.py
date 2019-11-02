@@ -7,6 +7,7 @@ vet1 = []
 somadamedia = 0
 contadormedia = 0
 somadosimpares = 0
+Receber os valores 
 for i in range(50):
   vet1.append(float(input('digite o {}° número: '.format(i+1))))
   if vet1[i] > 10 and vet1[i] < 200:
@@ -109,23 +110,38 @@ while len(vetsorted) < 20:
     menor += 1
 print('Os valores dispostos em ordem crescente ficam {}'.format(vetsorted[0:]))
 # 7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
-vet = []
-for i in range(30):
-  vet.append(i*2)
-print(vet)
-num = int(input('Insira o valor a ser procurado: '))
-rangevet = len(vet)
-halfvet = rangevet//2
+vetsorted = []
+for i in range(15):
+  vetsorted.append(int(i + 1))
+print(vetsorted[0:])
+numtosearch = int(input('Insira o número a ser procurado no vetor: '))
+primeirociclo = 0
 begin = 0
 end = 0
+media = 0
 def fbinarysearch(n):
-  if begin == num:
-    return n[halfvet]
-  elif n[halfvet] >= num:
-    end = n[halfvet]
-  elif n[halfvet] >= num:
-    end = n[halfvet]
-
+  if primeirociclo == 0:
+    begin = 0
+    end = len(n)
+    media = (end - begin + 1)
+    primeirociclo = 1
+  elif n[begin] == numtosearch:
+    n = n[begin]
+    print('Encontrado!!! Na posição {} do vetor.'.format(begin))
+    return n
+  elif n[end] == numtosearch:
+    n = n[end]
+    print('Encontrado!!! Na posição {} do vetor.'.format(end))
+    return n
+  elif n[media] < numtosearch:
+    begin = media
+    media = (end - begin + 1)
+    return (fbinarysearch(n))
+  elif n[media] > numtosearch:
+    end = media
+    media = (end - begin + 1)
+    return (fbinarysearch(n))
+print(fbinarysearch(vetsorted))
 
 
 
