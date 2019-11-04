@@ -109,39 +109,39 @@ while len(vetsorted) < 20:
     		vetsorted.append(menor)
     menor += 1
 print('Os valores dispostos em ordem crescente ficam {}'.format(vetsorted[0:]))
+
 # 7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
 vetsorted = []
 for i in range(15):
   vetsorted.append(int(i + 1))
 print(vetsorted[0:])
 numtosearch = int(input('Insira o número a ser procurado no vetor: '))
-primeirociclo = 0
 begin = 0
 end = 0
 media = 0
-def fbinarysearch(n):
-  if primeirociclo == 0:
+firstcicle = 0
+def fbinarysearch(n, begin, end, media, firstcicle):
+  if firstcicle == 0:
     begin = 0
     end = len(n)
-    media = (end - begin + 1)
-    primeirociclo = 1
-  elif n[begin] == numtosearch:
-    n = n[begin]
-    print('Encontrado!!! Na posição {} do vetor.'.format(begin))
-    return n
-  elif n[end] == numtosearch:
-    n = n[end]
-    print('Encontrado!!! Na posição {} do vetor.'.format(end))
-    return n
+    media = ((end - begin)//2)
+    firstcicle = 1
+  elif end - begin == 1:
+    if n[begin] == numtosearch:
+      print('Encontrado!!! Na posição {} do vetor.'.format(begin))
+      return n
+    elif n[end] == numtosearch:
+      print('Encontrado!!! Na posição {} do vetor.'.format(end))
+      return n
   elif n[media] < numtosearch:
     begin = media
-    media = (end - begin + 1)
-    return (fbinarysearch(n))
+    media = (begin + ((end - begin)//2))
+    return (fbinarysearch(n, begin, end, media, firstcicle))
   elif n[media] > numtosearch:
     end = media
-    media = (end - begin + 1)
-    return (fbinarysearch(n))
-print(fbinarysearch(vetsorted))
+    media = (begin + ((end - begin)//2))
+    return (fbinarysearch(n, begin, end, media, firstcicle))
+print(fbinarysearch(vetsorted, begin, end, media, firstcicle))
 
 
 
