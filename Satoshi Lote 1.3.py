@@ -7,7 +7,7 @@ vet1 = []
 somadamedia = 0
 contadormedia = 0
 somadosimpares = 0
-Receber os valores 
+# Receber os valores 
 for i in range(50):
   vet1.append(float(input('digite o {}° número: '.format(i+1))))
   if vet1[i] > 10 and vet1[i] < 200:
