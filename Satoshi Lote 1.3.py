@@ -69,13 +69,13 @@ somadamedia = 0
 contadormedia = 0
 contadoracimadamedia = 0
 #receber os valores do vetor e calcular a média
-for i in range (5):
+for i in range (30):
   vet.append(int(input('Insira o {}° número: '.format(i+1))))
   somadamedia += vet[i]
   contadormedia += 1
 media = somadamedia / contadormedia
 #calcular quantos estão abaixo da média
-for i in range (5):
+for i in range (len(vet)):
   if vet[i] > media:
     contadoracimadamedia += 1
   elif vet[i] < media:
@@ -88,27 +88,37 @@ print('A média do grupo é: {}\nSendo {} dessas notas acima da média\nCom as s
 #∑ (A[1] – A[21–1])
 #i = 1
 vet = []
-
+for i in range(20):
+ vet.append(int(input('Insira o {}° número do vetor: '.format(i+1))))
+indice = 0
+guardasoma = 0
+inicio = 0
+fim = 0
+tamanhodovetor = len(vet)
+for indice in range(tamanhodovetor//2):
+  inicio = vet[indice]
+  fim = len(vet) - indice
+  guardasoma += inicio - fim
+print('O resultado da somatória é: {}'.format(guardasoma))
 
 #6. Criar e coletar em um vetor [20] com números aleatórios. Classificar este vetor em ordem crescente e mostre os dados.
-vet = []
-vetsorted = []
-maior = 0
-menor = 0
+from random import randint
+vetor = []
+vetorcrescente = []
 for i in range(20):
-	vet.append(int(input('Insira o {}° número do vetor: '.format(i+1))))
-	if i == 1:
-	  menor = vet[i]
-	elif vet[i] < menor:
-	  menor = vet[i]
-vetsorted.append(menor)
-while len(vetsorted) < 20:
-    for verif in range(len(vet)):
-    	if ((menor + 1) == (vet[verif])):
-    		menor = vet[verif]
-    		vetsorted.append(menor)
-    menor += 1
-print('Os valores dispostos em ordem crescente ficam {}'.format(vetsorted[0:]))
+  vetor.append(randint(1, 500))
+print('Vetor na ordem de input:\n{}'.format(vetor))
+menor = vetor[0]
+for i in range(len(vetor)):
+  if vetor[i] < menor:
+    menor = vetor[i]
+vetorcrescente.append(menor)
+while len(vetorcrescente) < len(vetor):
+  for incrementador in range(len(vetor)):
+    if (menor + 1) == vetor[incrementador]:
+      vetorcrescente.append(vetor[incrementador])
+  menor += 1
+print('Vetor em ordem crescente:\n{}'.format(vetorcrescente))
 
 # 7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
 vetsorted = []
@@ -142,9 +152,6 @@ def fbinarysearch(n, begin, end, media, firstcicle):
     media = (begin + ((end - begin)//2))
     return (fbinarysearch(n, begin, end, media, firstcicle))
 print(fbinarysearch(vetsorted, begin, end, media, firstcicle))
-
-
-
 
 
 
