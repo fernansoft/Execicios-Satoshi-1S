@@ -121,43 +121,49 @@ while len(vetorcrescente) < len(vetor):
 print('Vetor em ordem crescente:\n{}'.format(vetorcrescente))
 
 # 7. A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua existência no vetor (utilizar pesquisa binária).
-vetsorted = []
-for i in range(15):
-  vetsorted.append(int(i + 1))
-print(vetsorted[0:])
-numtosearch = int(input('Insira o número a ser procurado no vetor: '))
-begin = 0
-end = 0
-media = 0
-firstcicle = 0
-def fbinarysearch(n, begin, end, media, firstcicle):
-  if firstcicle == 0:
-    begin = 0
-    end = len(n)
-    media = ((end - begin)//2)
-    firstcicle = 1
-  elif end - begin == 1:
-    if n[begin] == numtosearch:
-      print('Encontrado!!! Na posição {} do vetor.'.format(begin))
-      return n
-    elif n[end] == numtosearch:
-      print('Encontrado!!! Na posição {} do vetor.'.format(end))
-      return n
-  elif n[media] < numtosearch:
-    begin = media
-    media = (begin + ((end - begin)//2))
-    return (fbinarysearch(n, begin, end, media, firstcicle))
-  elif n[media] > numtosearch:
-    end = media
-    media = (begin + ((end - begin)//2))
-    return (fbinarysearch(n, begin, end, media, firstcicle))
-print(fbinarysearch(vetsorted, begin, end, media, firstcicle))
-
-
-
-
+numeroprocurado = int(input('Insira o número a ser procurado no vetor: '))
+# Definindo função:
+def fpesquisabinaria(n):
+  inicio = 0
+  fim = len(n)
+  fimlaço = 0
+  while fimlaço == 0:
+    meio = (fim + inicio) // 2
+    # Caso eu encontre o valor procurado:
+    if n[meio] == numeroprocurado:
+      print('Número encontrado!!! E está na posição {} do vetor.'.format(meio))
+      fimlaço = 1
+    # Caso eu não encontre o valor procurado:
+    elif fim - inicio == 1:
+      print('Número não encontrado!')
+      fimlaço = 1
+    # Caso o meio do meu vetor seja menor que o número procurado:
+    elif n[meio] < numeroprocurado:
+      inicio = meio
+    # Caso o meio do meu vetor seja maior que o número procurado:
+    elif n[meio] > numeroprocurado:
+      fim = meio
+# chamando a função usando o vetor criado e ordenado no Ex06.
+fpesquisabinaria(vetorcrescente)
 
 # 8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
+mes = []
+semana = []
+for x in range(4):
+  semana = []
+  for y in range(3):
+    semana.append(x+1)
+  mes.append(semana)
+print(mes[:])
 # a. A quantidade de cada produto vendido no mês;
 # b. A quantidade de produtos vendidos por semana;
+prodsemana = 0
+prodmes = 0
+for vendasemana in range(4):
+  for vendaproduto in range(3):
+    prodsemana += mes[vendasemana][vendaproduto]
+    prodmes += mes[vendaproduto][vendasemana]
+  print(f'A quantidade do produto {vendasemana} vendidos no mês foi de {prodmes}:')
+  print(f'A quantidade do produto {vendaproduto} vendidos na semana foi de {prodmes}:')
+  soma=0
 # c. O total de produtos vendidos no mês.
