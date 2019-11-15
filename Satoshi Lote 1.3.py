@@ -147,23 +147,26 @@ def fpesquisabinaria(n):
 fpesquisabinaria(vetorcrescente)
 
 # 8. Criar e carregar uma matriz [4][3] inteiro com quantidade de produtos vendidos em 4 semanas. Calcular e exibir:
+# Receber os valores da matriz:
 mes = []
 semana = []
-for x in range(4):
+for linha in range(4):
   semana = []
-  for y in range(3):
-    semana.append(x+1)
+  for coluna in range(3):
+    semana.append(coluna + 1)
   mes.append(semana)
 print(mes[:])
 # a. A quantidade de cada produto vendido no mês;
+produtosmes = []
+for coluna in range(3):
+  somaprodutomes = 0
+  for linha in range(4):
+    somaprodutomes += mes[linha][coluna]
+  produtosmes.append(somaprodutomes)
+print('A quantidade de cada produto vendido no mês foi:\nProduto A: {}\nProduto B: {}\nProduto C: {}'.format(produtosmes[0], produtosmes[1], produtosmes[2]))
 # b. A quantidade de produtos vendidos por semana;
-prodsemana = 0
-prodmes = 0
-for vendasemana in range(4):
-  for vendaproduto in range(3):
-    prodsemana += mes[vendasemana][vendaproduto]
-    prodmes += mes[vendaproduto][vendasemana]
-  print(f'A quantidade do produto {vendasemana} vendidos no mês foi de {prodmes}:')
-  print(f'A quantidade do produto {vendaproduto} vendidos na semana foi de {prodmes}:')
-  soma=0
-# c. O total de produtos vendidos no mês.
+produtossemana = []
+for linha in range(4):
+  somaprodutosemana = 0
+  for coluna in range(3):
+    somaprodutosemana += mes[
