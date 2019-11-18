@@ -150,13 +150,18 @@ fpesquisabinaria(vetorcrescente)
 # Receber os valores da matriz:
 from random import randint
 mes = []
+contlinha = 0
+contcoluna = 0
 semana = []
 for linha in range(4):
   semana = []
+  contlinha += 1
   for coluna in range(3):
     semana.append(int(input('Insira a quantidades de vendas do {}° produto na {}ª semana: '.format(coluna + 1, linha + 1))))
+    contcoluna += 1
   mes.append(semana)
 print(mes[:])
+contcoluna //= contlinha
 # a. A quantidade de cada produto vendido no mês;
 produtosmes = []
 for coluna in range(3):
@@ -175,4 +180,7 @@ for linha in range(4):
 print('A quantidade de produtos vendidos por semana foi:\nSemana 1: {}\nSemana 2: {}\nSemana 3: {}\nSemana 4: {}'.format(produtosemana[0], produtosemana[1], produtosemana[2], produtosemana[3]))
 # c. O total de produtos vendidos no mês.
 totalmes = 0
-for i in range(len)
+for coluna in range(contcoluna):
+  for linha in range(contlinha):
+    totalmes += mes[linha][coluna]
+print('O total de produtos vendidos no mês foi de: {}'.format(totalmes))
