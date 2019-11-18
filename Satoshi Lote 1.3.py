@@ -201,3 +201,15 @@ for linha in range(4):
       linhamatriz.append(int(input('Insira um número desejado para preencher a linha {} e coluna {} da matriz: '.format(linha, coluna))))
   matriz.append(linhamatriz)
 print(matriz)
+
+# 10. Criar uma matriz [8][8] onde o programa irá carregar segundo:
+matriz = []
+linhamatriz = []
+aux = 1
+for linha in range(8):
+	for coluna in range(8):
+		linhamatriz.append(aux)
+		aux *= 2
+	matriz.append(linhamatriz)
+	linhamatriz = []
+print(matriz)
