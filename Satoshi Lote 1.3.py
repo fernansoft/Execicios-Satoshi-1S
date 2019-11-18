@@ -213,3 +213,19 @@ for linha in range(8):
 	matriz.append(linhamatriz)
 	linhamatriz = []
 print(matriz)
+
+# 11. Criar uma matriz [8][8] inteiro e o programa irá carregar segundo:
+inicio = 0
+fim = 8
+aux = 1
+matriz = []
+linhamatriz = []
+def fexec11(m, l, inicio, fim, aux):
+	if inicio > 4:
+		return m
+	for linha in range(inicio, fim):
+		for coluna in range(inicio, fim):
+			linhamatriz.append(aux)
+		matriz.append(linhamatriz)
+		return(m, l, inicio + 1, fim - 1, aux + 1)
+print(fexec11(matriz, linhamatriz, inicio, fim, aux))
