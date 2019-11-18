@@ -184,3 +184,20 @@ for coluna in range(contcoluna):
   for linha in range(contlinha):
     totalmes += mes[linha][coluna]
 print('O total de produtos vendidos no mês foi de: {}'.format(totalmes))
+
+# 9. Criar e carregar uma matriz [4][4] com valores aleatórios, sendo que a diagonal principal terá seus dados carregados no programa segundo:
+from random import randint
+linhamatriz = []
+matriz = []
+for linha in range(4):
+	linhamatriz = []
+	for coluna in range(4):
+		if linha == coluna:
+			if coluna == 0:
+				linhamatriz.append(1)
+			else:
+				linhamatriz.append((matriz[linha - 1][coluna - 1]) * 4)
+		else:
+			linhamatriz.append(int(input('Insira um número desejado para preencher a linha {} e coluna {} da matriz: '.format(linha, coluna))))
+	matriz.append(linhamatriz)
+print(matriz)
