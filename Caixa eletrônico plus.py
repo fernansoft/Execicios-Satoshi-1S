@@ -68,9 +68,10 @@ def fescolhanumeronotas(d):
 	d = int(input('Você gostaria de garantir o saque de uma nota de R$20,00 ou duas de R$10,00?\nSe sim, escolha o código referente a opçao desejada:\n1 - Uma nota de R$20,00\n2 - Duas notas de R$10,00\n3 - Sacar sem preferência de nota\n4 - voltar para o menu'))
 	while d != 1 and d != 2 and d != 3 and d != 4:
 		print('Ops, opção inexistente! Favor inserir uma das opções!')
-		d = int(input('Você gostaria de garantir o saque de uma nota de R$20,00 ou duas de R$10,00?\nSe sim, escolha o código referente a opção desejada:\n1 - Uma nota de R$20,00\n2 - Duas notas de R$10,00\n3 - Sacar sem preferência de nota\n4 - voltar para o menu'))
+		d = int(input('Vo cê gostaria de garantir o saque de uma nota de R$20,00 ou duas de R$10,00?\nSe sim, escolha o código referente a opção desejada:\n1 - Uma nota de R$20,00\n2 - Duas notas de R$10,00\n3 - Sacar sem preferência de nota\n4 - voltar para o menu'))
 	if d == 1:
-			
+     
+
 # 1.3. Dar a opção para o cliente escolher o valor e a quantidade de notas. P. ex.: 1 x 20, 2 x 10 
 # 1.2. Solicitar que o cliente faça a retirada de valores obedecendo ao critério do maior para o menor. 
 # 1.4. Caso não tenha o valor da maior cédula, disponibilizar a próxima. 

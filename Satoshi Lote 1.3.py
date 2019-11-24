@@ -53,7 +53,7 @@ for i in range (3):
 for i in range (len(vet1) + len(vet2)):
   if i < len(vet1):
     vet3.append(vet1[i])
-  elif i > len(vet2):
+  elif i+1 > len(vet2):
     r = i - len(vet1)
     vet3.append(vet2[r])
 print(vet3[0:])
