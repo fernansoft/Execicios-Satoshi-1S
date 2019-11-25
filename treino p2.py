@@ -27,3 +27,23 @@ def exec1geral():
 exec1geral()
 
 # Exec 2
+def fclassificarcrescente(matrizordenada, aux, matriz):
+	matrizordenada = matriz[:]
+	vetoraux = []
+	aux = 0
+	while len(matrizordenada) < len(matriz):
+		for x in range(299):
+			for y in range(299):
+				if matrizordenada[x][y] > matrizordenada[x][y+1]:
+					aux = matrizordenada[x][y]
+					matrizordenada
+
+
+
+
+[10,40,50,60]
+[29,32,45,20]
+[01,02,07,05]
+
+[10,40,50,29]
+[60]
